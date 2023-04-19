@@ -15,7 +15,7 @@
 
 ## Example
 
-Do check out & run [example.ts](https://github.com/adiwajshing/Baileys/blob/master/Example/example.ts) to see an example usage of the library.
+Do check out & run [example.ts](https://github.com/rodrigolima1910/baileys/blob/master/Example/example.ts) to see an example usage of the library.
 The script covers most common use cases.
 To run the example script, download or clone the repo and then type the following in a terminal:
 1. ``` cd path/to/Baileys ```
@@ -176,7 +176,7 @@ You obviously don't want to keep scanning the QR code every time you want to con
 
 So, you can load the credentials to log back in:
 ``` ts
-import makeWASocket, { BufferJSON, useMultiFileAuthState } from '@adiwajshing/baileys'
+import makeWASocket, { BufferJSON, useMultiFileAuthState } from '@rodrigolima1910/baileys'
 import * as fs from 'fs'
 
 // utility function to help save the auth state in a single folder
@@ -289,7 +289,7 @@ Baileys does not come with a defacto storage for chats, contacts, or messages. H
 It can be used as follows:
 
 ``` ts
-import makeWASocket, { makeInMemoryStore } from '@adiwajshing/baileys'
+import makeWASocket, { makeInMemoryStore } from '@rodrigolima1910/baileys'
 // the store maintains the data of the WA connection in memory
 // can be written out to a file & read from it
 const store = makeInMemoryStore({ })
@@ -328,7 +328,7 @@ The store also provides some simple functions such as `loadMessages` that utiliz
 ### Non-Media Messages
 
 ``` ts
-import { MessageType, MessageOptions, Mimetype } from '@adiwajshing/baileys'
+import { MessageType, MessageOptions, Mimetype } from '@rodrigolima1910/baileys'
 
 const id = 'abcd@s.whatsapp.net' // the WhatsApp ID 
 // send a simple text!
@@ -377,7 +377,7 @@ const sendMsg = await sock.sendMessage(id, buttonMessage)
 
 //send a template message!
 const templateButtons = [
-    {index: 1, urlButton: {displayText: '⭐ Star Baileys on GitHub!', url: 'https://github.com/adiwajshing/Baileys'}},
+    {index: 1, urlButton: {displayText: '⭐ Star Baileys on GitHub!', url: 'https://github.com/rodrigolima1910/baileys'}},
     {index: 2, callButton: {displayText: 'Call me!', phoneNumber: '+1 (234) 5678-901'}},
     {index: 3, quickReplyButton: {displayText: 'This is a reply, just like normal buttons!', id: 'id-like-buttons-message'}},
 ]
@@ -436,7 +436,7 @@ const sendMsg = await sock.sendMessage(id, reactionMessage)
 4. Send a link:
 ``` ts
 // send a link
-const sentMsg  = await sock.sendMessage(id, { text: 'Hi, this was sent using https://github.com/adiwajshing/baileys' })
+const sentMsg  = await sock.sendMessage(id, { text: 'Hi, this was sent using https://github.com/rodrigolima1910/baileys' })
 ```
 
 ### Media Messages
@@ -446,7 +446,7 @@ Sending media (video, stickers, images) is easier & more efficient than ever.
 - When specifying a media url, Baileys never loads the entire buffer into memory; it even encrypts the media as a readable stream.
 
 ``` ts
-import { MessageType, MessageOptions, Mimetype } from '@adiwajshing/baileys'
+import { MessageType, MessageOptions, Mimetype } from '@rodrigolima1910/baileys'
 // Sending gifs
 await sock.sendMessage(
     id, 
@@ -492,7 +492,7 @@ const sendMsg = await sock.sendMessage(id, buttonMessage)
 
 //send a template message with an image **attached**!
 const templateButtons = [
-  {index: 1, urlButton: {displayText: '⭐ Star Baileys on GitHub!', url: 'https://github.com/adiwajshing/Baileys'}},
+  {index: 1, urlButton: {displayText: '⭐ Star Baileys on GitHub!', url: 'https://github.com/rodrigolima1910/baileys'}},
   {index: 2, callButton: {displayText: 'Call me!', phoneNumber: '+1 (234) 5678-901'}},
   {index: 3, quickReplyButton: {displayText: 'This is a reply, just like normal buttons!', id: 'id-like-buttons-message'}},
 ]
@@ -528,7 +528,7 @@ const sendMsg = await sock.sendMessage(id, templateMessage)
                                     Do not enter this field if you want to automatically generate a thumb
                                 */
         mimetype: Mimetype.pdf, /* (for media messages) specify the type of media (optional for all media types except documents),
-                                    import {Mimetype} from '@adiwajshing/baileys'
+                                    import {Mimetype} from '@rodrigolima1910/baileys'
                                 */
         fileName: 'somefile.pdf', // (for media messages) file name for the media
         /* will send audio messages as voice notes, if set to true */
@@ -587,7 +587,7 @@ The presence expires after about 10 seconds.
 If you want to save the media you received
 ``` ts
 import { writeFile } from 'fs/promises'
-import { downloadMediaMessage } from '@adiwajshing/baileys'
+import { downloadMediaMessage } from '@rodrigolima1910/baileys'
 
 sock.ev.on('messages.upsert', async ({ messages }) => {
     const m = messages[0]
