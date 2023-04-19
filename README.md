@@ -26,17 +26,17 @@ To run the example script, download or clone the repo and then type the followin
 
 Use the stable version:
 ```
-yarn add @adiwajshing/baileys
+yarn add @rodrigolima1910/baileys
 ```
 
 Use the edge version (no guarantee of stability, but latest fixes + features)
 ```
-yarn add github:adiwajshing/baileys
+yarn add github:rodrigolima1910/baileys
 ```
 
 Then import your code using:
 ``` ts 
-import makeWASocket from '@adiwajshing/baileys'
+import makeWASocket from '@rodrigolima1910/baileys'
 ```
 
 ## Unit Tests
@@ -46,7 +46,7 @@ TODO
 ## Connecting
 
 ``` ts
-import makeWASocket, { DisconnectReason } from '@adiwajshing/baileys'
+import makeWASocket, { DisconnectReason } from '@rodrigolima1910/baileys'
 import { Boom } from '@hapi/boom'
 
 async function connectToWhatsApp () {
